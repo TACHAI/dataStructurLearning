@@ -6,48 +6,50 @@ package array;
  *
  * @Email 1206966083@qq.com
  */
-public class Array {
-    private int[] data;
+public class Array<E> {
+    private E[] data;
     //有效的元素
     private int size;
 
     /**
-     *
      * @param capacity 初始化容量
      */
-    public Array(int capacity){
-        data = new int[capacity];
+    public Array(int capacity) {
+        data = (E[]) new Object[capacity];
         size = 0;
     }
 
     /**
      * 初始化默认容量为10
      */
-    public Array(){
+    public Array() {
         this(10);
     }
 
     /**
      * 获取数组中的元素个数
+     *
      * @return
      */
-    public int getSize(){
+    public int getSize() {
         return size;
     }
 
     /**
      * 获取数组的容量的大小
+     *
      * @return
      */
-    public int getCapacity(){
+    public int getCapacity() {
         return data.length;
     }
 
     /**
      * 返回数组是否为空
+     *
      * @return
      */
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return size == 0;
     }
 
@@ -73,71 +75,83 @@ public class Array {
 
     /**
      * 向数组后添加一个元素
+     *
      * @param e
      */
-    public void addLast(int e){
-        add(size,e);
+    public void addLast(E e) {
+        add(size, e);
     }
 
 
     /**
      * 在第index个位置插入一个新元素e
+     *
      * @param e
      */
-    public void addFirst(int e){
-        add(0,e);
+    public void addFirst(E e) {
+        add(0, e);
     }
 
     /**
      * 在第index个位置插入一个新元素e
+     *
      * @param index
      * @param e
      */
-    public void add(int index,int e){
-        if(size < data.length){
-            if(index>0&index<size){
-                for(int i= size-1;i>=index;i--){
-                    data[i+1] = data[i];
-                }
-                data[index] = e;
-                size ++;
-            }
+    public void add(int index, E e) {
+        if (index < 0 || index > size) {
+            throw new IllegalArgumentException("add failed require index>=0 and index < size");
         }
+
+        if (size >= data.length) {
+           resize(data.length*2);
+        }
+
+        for (int i = size - 1; i >= index; i--) {
+            data[i + 1] = data[i];
+        }
+        data[index] = e;
+        size++;
+
+
     }
 
     /**
      * 获取元素的值
+     *
      * @param index
      * @return
      */
-    public int get(int index){
-        if(index < 0 || index > size){
-            throw  new IllegalArgumentException("Get failed,Index is illegal.");
+    public E get(int index) {
+        if (index < 0 || index > size) {
+            throw new IllegalArgumentException("Get failed,Index is illegal.");
         }
         return data[index];
     }
 
     /**
      * 设置元素的值
+     *
      * @param index
      * @param e
      * @return
      */
-    public void set(int index, int e){
-        if(index < 0 || index > size){
-            throw  new IllegalArgumentException("Get failed,Index is illegal.");
+    public void set(int index, E e) {
+        if (index < 0 || index > size) {
+            throw new IllegalArgumentException("Get failed,Index is illegal.");
         }
         data[index] = e;
     }
 
     /**
      * 查找数组是否有元素e
+     *
      * @param e
      * @return
      */
-    public boolean contains(int e){
-        for(int i = 0;i<size;i++){
-            if(data[i] == e){
+    public boolean contains(E e) {
+        for (int i = 0; i < size; i++) {
+            if (data[i].equals(e)) {
                 return true;
             }
         }
@@ -146,12 +160,13 @@ public class Array {
 
     /**
      * 查找某个元素
+     *
      * @param e
      * @return
      */
-    public int find(int e){
-        for(int i = 0; i < size; i++){
-            if(data[1] == e){
+    public int find(E e) {
+        for (int i = 0; i < size; i++) {
+            if (data[1].equals(e)) {
                 return i;
             }
         }
@@ -160,46 +175,66 @@ public class Array {
 
     /**
      * 从数组中删除元素，返回元素
+     *
      * @param index
      * @return
      */
-    public int remove(int index){
-        if(index < 0 || index > size){
-            throw  new IllegalArgumentException("Get failed,Index is illegal.");
+    public E remove(int index) {
+        if (index < 0 || index > size) {
+            throw new IllegalArgumentException("Get failed,Index is illegal.");
         }
-        int ret = data[size]''
-        for(int i= index;i<size;i++){
-            data[i] = data[i+1];
+        E ret = data[size];
+        for (int i = index; i < size; i++) {
+            data[i] = data[i + 1];
         }
+//        for(int i= index+1;i<size;i++){
+//            data[i-1] = data[i];
+//        }
+        size--;
+        data[size] = null;//loitering objects != memory leak(内存泄漏)
+       //lazy
+        if(size==data.length/4&&data.length/2!=0){
+           resize(data.length/2);
+       }
         return ret;
     }
 
     /**
      * 删除某个元素
+     *
      * @param e
      */
-    public boolean removeElement(int e){
+    public boolean removeElement(E e) {
         int index = find(e);
-        if(index != -1){
+        if (index != -1) {
             remove(index);
             return true;
         }
         return false;
     }
 
+
     @Override
-    public String toString(){
+    public String toString() {
         StringBuilder res = new StringBuilder();
-        res.append(String.format("Array: size = %d, capacity = %d\n",size,data.length));
+        res.append(String.format("Array: size = %d, capacity = %d\n", size, data.length));
         res.append('[');
-        for (int i = 0;i < size ; i ++){
+        for (int i = 0; i < size; i++) {
             res.append(data[i]);
-            if(i != size-1){
+            if (i != size - 1) {
                 res.append(", ");
             }
         }
         res.append("]");
         return res.toString();
+    }
+
+    private void resize(int newCapacity) {
+        E[] newData = (E[]) new Object[newCapacity];
+        for (int i = 0; i < size; i++) {
+            newData[i] = data[i];
+        }
+        data = newData;
     }
 
 }
