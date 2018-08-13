@@ -198,6 +198,16 @@ public class Array<E> {
        }
         return ret;
     }
+    public E removeFirst(){
+        return remove(0);
+    }
+
+    public E removeLast(){
+        E e = data[size-1];
+        remove(size-1);
+        return e;
+    }
+
 
     /**
      * 删除某个元素
