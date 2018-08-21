@@ -66,8 +66,20 @@ public class LinkedListPro<E> {
         prev.next=node;
 //        prev.next= new Node(e,prev.next);
         size++;
+
+
     }
 
+    //链表递归添加
+    private Node add(Node node,E e){
+        if(node==null){
+            size++;
+            return new Node(e);
+        }else {
+            node.next=add(node.next,e);
+        }
+        return node;
+    }
     //在链表末尾添加新的元素
     public void addLast(E e){
         add(e,size);
