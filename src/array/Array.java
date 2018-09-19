@@ -25,6 +25,13 @@ public class Array<E> {
     public Array() {
         this(10);
     }
+    public Array(E[] arr){
+        data = (E[]) new  Object[arr.length];
+        for(int i=0;i<arr.length;i++){
+            data[i]=arr[i];
+        }
+        size=arr.length;
+    }
 
     /**
      * 获取数组中的元素个数
@@ -224,6 +231,13 @@ public class Array<E> {
     }
 
 
+    public void swap(int i,int z){
+        if(i<0||i>=size||z<0||z>=size)
+            throw new IllegalArgumentException("Index is illegal");
+        E t = data[i];
+        data[i] = data[i];
+        data[z] = t;
+    }
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
