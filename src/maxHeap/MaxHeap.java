@@ -62,7 +62,6 @@ public class MaxHeap<E extends Comparable<E>> {
             k=parent(k);
         }
     }
-
     // 看堆中最大的元素
     public E findMax(){
         if(data.getSize()==0){
