@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="635a09bd-53f1-406c-91b6-cf66f680b1b4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/trie/Trie.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/unionFind/UF.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/unionFind/UnionFind1.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/unionFind/UnionFind2.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/segmentTree/SegmentTree.java" afterPath="$PROJECT_DIR$/src/segmentTree/SegmentTree.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,50 +18,51 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="LinkedListMap.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Map/LinkedListMap.java">
+      <file leaf-file-name="MaxHeap.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/maxHeap/MaxHeap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="14" column="43" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="43" />
+            <state relative-caret-position="37">
+              <caret line="63" column="5" lean-forward="false" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BSTMap.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Map/BSTMap.java">
+      <file leaf-file-name="UF.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/unionFind/UF.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4699">
-              <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
+            <state relative-caret-position="407">
+              <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UnionFind1.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/unionFind/UnionFind1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="151">
+              <caret line="26" column="9" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="26" selection-end-column="9" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#386#387#0" expanded="true" />
+                <element signature="e#418#419#0" expanded="true" />
+                <element signature="e#686#687#0" expanded="true" />
+                <element signature="e#725#726#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BST.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tree/BST.java">
+      <file leaf-file-name="UnionFind2.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/unionFind/UnionFind2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5994">
-              <caret line="178" column="1" lean-forward="false" selection-start-line="178" selection-start-column="1" selection-end-line="197" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MaxHeap.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/maxHeap/MaxHeap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1924">
-              <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+            <state relative-caret-position="188">
+              <caret line="49" column="8" lean-forward="true" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
               <folding>
-                <element signature="e#619#620#0" expanded="false" />
-                <element signature="e#656#657#0" expanded="false" />
-                <element signature="e#709#710#0" expanded="false" />
-                <element signature="e#746#747#0" expanded="false" />
-                <element signature="e#1039#1040#0" expanded="false" />
-                <element signature="e#1071#1072#0" expanded="false" />
+                <element signature="e#393#394#0" expanded="true" />
+                <element signature="e#429#430#0" expanded="true" />
+                <element signature="e#802#803#0" expanded="true" />
+                <element signature="e#841#842#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -90,23 +92,26 @@
       <file leaf-file-name="SegmentTree.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/segmentTree/SegmentTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="37">
+            <state relative-caret-position="2294">
               <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="e#1093#1094#0" expanded="false" />
+                <element signature="e#1127#1128#0" expanded="false" />
+                <element signature="e#2160#2161#0" expanded="false" />
+                <element signature="e#2192#2193#0" expanded="false" />
+                <element signature="e#2232#2233#0" expanded="false" />
+                <element signature="e#2264#2265#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Trie.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Trie.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/trie/Trie.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
+            <state relative-caret-position="2405">
               <caret line="69" column="21" lean-forward="false" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#467#468#0" expanded="true" />
-                <element signature="e#502#503#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -137,10 +142,14 @@
             <state relative-caret-position="1110">
               <caret line="32" column="16" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
               <folding>
+                <element signature="e#387#388#0" expanded="false" />
+                <element signature="e#411#412#0" expanded="false" />
                 <element signature="e#676#677#0" expanded="false" />
                 <element signature="e#703#704#0" expanded="false" />
                 <element signature="e#791#792#0" expanded="false" />
                 <element signature="e#825#826#0" expanded="false" />
+                <element signature="e#911#912#0" expanded="false" />
+                <element signature="e#943#944#0" expanded="false" />
                 <element signature="e#1449#1450#0" expanded="false" />
                 <element signature="e#1477#1478#0" expanded="false" />
                 <element signature="e#1576#1577#0" expanded="false" />
@@ -205,10 +214,13 @@
         <option value="$PROJECT_DIR$/src/Map/BSTMap.java" />
         <option value="$PROJECT_DIR$/src/array/Array.java" />
         <option value="$PROJECT_DIR$/src/maxHeap/PriorityQueue.java" />
-        <option value="$PROJECT_DIR$/src/maxHeap/MaxHeap.java" />
         <option value="$PROJECT_DIR$/src/segmentTree/Merger.java" />
         <option value="$PROJECT_DIR$/src/segmentTree/SegmentTree.java" />
         <option value="$PROJECT_DIR$/src/trie/Trie.java" />
+        <option value="$PROJECT_DIR$/src/maxHeap/MaxHeap.java" />
+        <option value="$PROJECT_DIR$/src/unionFind/UF.java" />
+        <option value="$PROJECT_DIR$/src/unionFind/UnionFind1.java" />
+        <option value="$PROJECT_DIR$/src/unionFind/UnionFind2.java" />
       </list>
     </option>
   </component>
@@ -230,8 +242,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1182" />
-    <option name="y" value="56" />
+    <option name="x" value="945" />
+    <option name="y" value="17" />
     <option name="width" value="1938" />
     <option name="height" value="992" />
   </component>
@@ -277,11 +289,29 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unionFind" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dataStructureLearning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dataStructureLearning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -295,6 +325,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="unionFind" />
       <recent name="LinkList" />
     </key>
   </component>
@@ -813,15 +844,16 @@
       <workItem from="1537367227548" duration="2650000" />
       <workItem from="1537443776032" duration="3000" />
       <workItem from="1537885403047" duration="1758000" />
-      <workItem from="1538058769079" duration="2206000" />
+      <workItem from="1538058769079" duration="2971000" />
+      <workItem from="1538462593440" duration="2407000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80926000" />
+    <option name="totallyTimeSpent" value="84098000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1182" y="56" width="1938" height="992" extended-state="0" />
+    <frame x="945" y="17" width="1938" height="992" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -835,10 +867,10 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11758119" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22370012" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2382104" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15075107" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.152897" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -903,30 +935,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="74">
-            <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/array/Array.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7104">
-          <caret line="206" column="23" lean-forward="false" selection-start-line="206" selection-start-column="23" selection-end-line="206" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/stack/Stack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/stack/ArrayStack.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1702">
@@ -1208,7 +1216,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1225,7 +1232,7 @@
         <state relative-caret-position="4699">
           <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1234,7 +1241,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5994">
           <caret line="178" column="1" lean-forward="false" selection-start-line="178" selection-start-column="1" selection-end-line="197" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#585#586#0" expanded="false" />
+            <element signature="e#612#613#0" expanded="false" />
+            <element signature="e#642#643#0" expanded="false" />
+            <element signature="e#672#673#0" expanded="false" />
+            <element signature="e#719#720#0" expanded="false" />
+            <element signature="e#752#753#0" expanded="false" />
+            <element signature="e#1479#1480#0" expanded="false" />
+            <element signature="e#1518#1519#0" expanded="false" />
+            <element signature="e#1861#1862#0" expanded="false" />
+            <element signature="e#1891#1892#0" expanded="false" />
+            <element signature="e#2102#2103#0" expanded="false" />
+            <element signature="e#2131#2132#0" expanded="false" />
+            <element signature="e#2342#2343#0" expanded="false" />
+            <element signature="e#2373#2374#0" expanded="false" />
+            <element signature="e#4941#4942#0" expanded="false" />
+            <element signature="e#4978#4979#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1243,10 +1268,14 @@
         <state relative-caret-position="1110">
           <caret line="32" column="16" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
           <folding>
+            <element signature="e#387#388#0" expanded="false" />
+            <element signature="e#411#412#0" expanded="false" />
             <element signature="e#676#677#0" expanded="false" />
             <element signature="e#703#704#0" expanded="false" />
             <element signature="e#791#792#0" expanded="false" />
             <element signature="e#825#826#0" expanded="false" />
+            <element signature="e#911#912#0" expanded="false" />
+            <element signature="e#943#944#0" expanded="false" />
             <element signature="e#1449#1450#0" expanded="false" />
             <element signature="e#1477#1478#0" expanded="false" />
             <element signature="e#1576#1577#0" expanded="false" />
@@ -1265,18 +1294,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/maxHeap/MaxHeap.java">
+    <entry file="file://$PROJECT_DIR$/src/segmentTree/Merger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1924">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        <state relative-caret-position="333">
+          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/segmentTree/SegmentTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2294">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding>
-            <element signature="e#619#620#0" expanded="false" />
-            <element signature="e#656#657#0" expanded="false" />
-            <element signature="e#709#710#0" expanded="false" />
-            <element signature="e#746#747#0" expanded="false" />
-            <element signature="e#1039#1040#0" expanded="false" />
-            <element signature="e#1071#1072#0" expanded="false" />
+            <element signature="e#1093#1094#0" expanded="false" />
+            <element signature="e#1127#1128#0" expanded="false" />
+            <element signature="e#2160#2161#0" expanded="false" />
+            <element signature="e#2192#2193#0" expanded="false" />
+            <element signature="e#2232#2233#0" expanded="false" />
+            <element signature="e#2264#2265#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trie/Trie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2405">
+          <caret line="69" column="21" lean-forward="false" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1299,30 +1344,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/segmentTree/Merger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/segmentTree/SegmentTree.java">
+    <entry file="file://$PROJECT_DIR$/src/maxHeap/MaxHeap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="37">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <caret line="63" column="5" lean-forward="false" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/trie/Trie.java">
+    <entry file="file://$PROJECT_DIR$/src/unionFind/UF.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="69" column="21" lean-forward="false" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
+        <state relative-caret-position="407">
+          <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/unionFind/UnionFind1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="26" column="9" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="26" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#467#468#0" expanded="true" />
-            <element signature="e#502#503#0" expanded="true" />
+            <element signature="e#386#387#0" expanded="true" />
+            <element signature="e#418#419#0" expanded="true" />
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#725#726#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/unionFind/UnionFind2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="49" column="8" lean-forward="true" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+          <folding>
+            <element signature="e#393#394#0" expanded="true" />
+            <element signature="e#429#430#0" expanded="true" />
+            <element signature="e#802#803#0" expanded="true" />
+            <element signature="e#841#842#0" expanded="true" />
           </folding>
         </state>
       </provider>
