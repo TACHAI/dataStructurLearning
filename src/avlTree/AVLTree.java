@@ -1,5 +1,7 @@
 package avlTree;
 
+import java.util.ArrayList;
+
 /**
  * Created by @Author tachai
  * date 2018/10/8 23:10
@@ -44,6 +46,44 @@ public class AVLTree<K extends Comparable<K>,V> {
         }
         return node.height;
     }
+
+    // 判断该二叉树是否是一颗二分搜索树
+    public boolean isBST(){
+        ArrayList<K> keys = new ArrayList<>();
+        inOrder(root,keys);
+        for(int i=1;i<keys.size();i++){
+            if(keys.get(i-1).compareTo(keys.get(i))>0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private void inOrder(Node node,ArrayList<K> keys){
+        if(node==null){
+            return;
+        }
+        inOrder(node.left,keys);
+        keys.add(node.key);
+        inOrder(node.right,keys);
+    }
+
+    // 判断该二叉树是一颗平衡二叉树
+    public boolean isBalanced(){
+        return isBalanced(root);
+    }
+
+    private boolean isBalanced(Node node){
+        if(node==null){
+            return true;
+        }
+        int balanceFactor = getBalanceFactor(node);
+        if(Math.abs(balanceFactor)>1){
+            return false;
+        }
+        return isBalanced(node.left)&&isBalanced(node.right);
+    }
+
     // 获得节点node的平衡因子
     private int getBalanceFactor(Node node){
         if(node==null){
