@@ -84,6 +84,7 @@ public class AVLTree<K extends Comparable<K>,V> {
         return isBalanced(node.left)&&isBalanced(node.right);
     }
 
+
     // 获得节点node的平衡因子
     private int getBalanceFactor(Node node){
         if(node==null){
@@ -91,6 +92,50 @@ public class AVLTree<K extends Comparable<K>,V> {
         }
         return getHeight(node.left)-getHeight(node.right);
     }
+
+    // 对节点y进行向右旋转操作，返回旋转后新的根节点x
+    //        y                              x
+    //       / \                           /   \
+    //      x   T4     向右旋转 (y)        z     y
+    //     / \       - - - - - - - ->    / \   / \
+    //    z   T3                       T1  T2 T3 T4
+    //   / \
+    // T1   T2
+    private Node rightRotate(Node y){
+        Node x=y.left;
+        Node T3=x.right;
+        // 向右旋转过程
+        x.right=y;
+        y.left=T3;
+        //更新height
+        y.height = Math.max(getHeight(y.left),getHeight(y.right));
+        x.height=Math.max(getHeight(x.left),getHeight(x.right));
+        return x;
+    }
+
+    // 对节点y进行向左旋转操作，返回旋转后新的根节点x
+    //    y                             x
+    //  /  \                          /   \
+    // T1   x      向左旋转 (y)       y     z
+    //     / \   - - - - - - - ->   / \   / \
+    //   T2  z                     T1 T2 T3 T4
+    //      / \
+    //     T3 T4
+    private Node leftRotate(Node y) {
+        Node x = y.right;
+        Node T2 = x.left;
+
+        // 向左旋转过程
+        x.left = y;
+        y.right = T2;
+
+        // 更新height
+        y.height = Math.max(getHeight(y.left), getHeight(y.right)) + 1;
+        x.height = Math.max(getHeight(x.left), getHeight(x.right)) + 1;
+
+        return x;
+    }
+
     //添加元素（key,value)
     public void add(K key,V value){
         root = add(root,key,value);
@@ -114,9 +159,76 @@ public class AVLTree<K extends Comparable<K>,V> {
 
         // 计算平衡因子
         int balanceFactor = getBalanceFactor(node);
-        if(Math.abs(balanceFactor)>1){
-            //todo
+        // 平衡维护
+        if (balanceFactor > 1 && getBalanceFactor(node.left) >= 0)
+            return rightRotate(node);
+
+        if (balanceFactor < -1 && getBalanceFactor(node.right) <= 0)
+            return leftRotate(node);
+
+        if (balanceFactor > 1 && getBalanceFactor(node.left) < 0) {
+            node.left = leftRotate(node.left);
+            return rightRotate(node);
+        }
+
+        if (balanceFactor < -1 && getBalanceFactor(node.right) > 0) {
+            node.right = rightRotate(node.right);
+            return leftRotate(node);
         }
         return node;
     }
+    //返回以node为根节点的二分搜索树中，key所在的节点
+    private Node getNode(Node node,K key){
+        if(node == null){
+            return null;
+        }
+        if(key.equals(node.key)){
+            return node;
+        }else if(key.compareTo(node.key)<0){
+            return getNode(node.left,key);
+        }else {
+            // if(key.compareTo(node.key)>0)
+            return getNode(node.right,key);
+        }
+    }
+    public boolean contains(K key){
+        return getNode(root,key)!=null;
+    }
+    public V get(K key){
+        Node node = getNode(root,key);
+        return node == null?null:node.value;
+    }
+
+    public void set(K key,V newValue){
+        Node node = getNode(root,key);
+        if(node == null){
+            throw new IllegalArgumentException(key+"doesn't exit");
+        }
+        node.value=newValue;
+    }
+
+    //返回以node为根的二分搜索树的最小值所在的节点
+    private Node minimum(Node node){
+        if(node.left == null){
+            return node;
+        }
+        return minimum(node.left);
+    }
+
+    // 删除掉以node为根的二分搜索树中的最小节点
+    // 返回删除节点后新的二分搜索树的根
+    private Node removeMin(Node node){
+
+        if(node.left == null){
+            Node rightNode = node.right;
+            node.right = null;
+            size --;
+            return rightNode;
+        }
+
+        node.left = removeMin(node.left);
+        return node;
+    }
+
+
 }
