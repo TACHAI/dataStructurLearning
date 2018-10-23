@@ -160,17 +160,18 @@ public class AVLTree<K extends Comparable<K>,V> {
         // 计算平衡因子
         int balanceFactor = getBalanceFactor(node);
         // 平衡维护
+        // LL
         if (balanceFactor > 1 && getBalanceFactor(node.left) >= 0)
             return rightRotate(node);
-
+        // RR
         if (balanceFactor < -1 && getBalanceFactor(node.right) <= 0)
             return leftRotate(node);
-
+        // LR
         if (balanceFactor > 1 && getBalanceFactor(node.left) < 0) {
             node.left = leftRotate(node.left);
             return rightRotate(node);
         }
-
+        // RL
         if (balanceFactor < -1 && getBalanceFactor(node.right) > 0) {
             node.right = rightRotate(node.right);
             return leftRotate(node);
@@ -229,6 +230,75 @@ public class AVLTree<K extends Comparable<K>,V> {
         node.left = removeMin(node.left);
         return node;
     }
+    // 从二分搜索树中删除键为key的节点
+    public V remove(K key){
+        Node node = getNode(root,key);
+        if(node!=null){
+            root=remove(root,key);
+            return node.value;
+        }
+        return null;
+    }
+    private Node remove(Node node,K key){
+        if(node == null){
+            return null;
+        }
+        Node retNode;
+        if(key.compareTo(node.key)<0){
+            node.left=remove(node.left,key);
+            retNode= node;
+        }else if(key.compareTo(node.key)>0){
+            node.right = remove(node.right,key);
+            retNode = node;
+        }else {
+            // 待删除节点左子树为空的情况
+            if(node.left==null){
+                Node rightNode = node.right;
+                node.right=null;
+                size--;
+                retNode =rightNode;
+            }
+            // 待删除节点右子树为空的情况
+            if(node.right==null){
+                Node leftNode = node.right;
+                node.left= null;
+                size--;
+                retNode =leftNode;
+            }
+            // 待删除节点左右子树均不为空的情况
+            // 找到比待删除节点大的最小节点，即待删除节点右子树最小节点
+            // 用这个节点顶替待删除的节点的位置
+            Node successor = minimum(node.right);
+            successor.right=removeMin(node.right);
+            successor.left=node.left;
 
+            node.left=node.right=null;
+            retNode =successor;
+        }
+
+        // 更新height
+        retNode.height = 1 + Math.max(getHeight(retNode.left),getHeight(retNode.right));
+
+        // 计算平衡因子
+        int balanceFactor = getBalanceFactor(retNode);
+        // 平衡维护
+        // LL
+        if (balanceFactor > 1 && getBalanceFactor(retNode.left) >= 0)
+            return rightRotate(retNode);
+        // RR
+        if (balanceFactor < -1 && getBalanceFactor(retNode.right) <= 0)
+            return leftRotate(retNode);
+        // LR
+        if (balanceFactor > 1 && getBalanceFactor(retNode.left) < 0) {
+            retNode.left = leftRotate(retNode.left);
+            return rightRotate(retNode);
+        }
+        // RL
+        if (balanceFactor < -1 && getBalanceFactor(retNode.right) > 0) {
+            retNode.right = rightRotate(retNode.right);
+            return leftRotate(retNode);
+        }
+        return retNode;
+    }
 
 }
