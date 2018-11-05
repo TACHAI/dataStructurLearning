@@ -259,7 +259,7 @@ public class AVLTree<K extends Comparable<K>,V> {
                 retNode =rightNode;
             }
             // 待删除节点右子树为空的情况
-            if(node.right==null){
+            else if(node.right==null){
                 Node leftNode = node.right;
                 node.left= null;
                 size--;
@@ -268,12 +268,19 @@ public class AVLTree<K extends Comparable<K>,V> {
             // 待删除节点左右子树均不为空的情况
             // 找到比待删除节点大的最小节点，即待删除节点右子树最小节点
             // 用这个节点顶替待删除的节点的位置
-            Node successor = minimum(node.right);
-            successor.right=removeMin(node.right);
-            successor.left=node.left;
+            else{
+                Node successor = minimum(node.right);
+                successor.right=remove(node.right,successor.key);
+                successor.left=node.left;
 
-            node.left=node.right=null;
-            retNode =successor;
+                node.left=node.right=null;
+                retNode =successor;
+            }
+
+        }
+
+        if(retNode==null){
+            return null;
         }
 
         // 更新height
