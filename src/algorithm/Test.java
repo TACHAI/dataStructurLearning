@@ -3,14 +3,16 @@ package algorithm;
 import java.util.Arrays;
 
 /**
- * Create by tachai on 2019-02-17 14:41
+ * Create by tachai on 2019-02-20 19:09
  * gitHub https://github.com/TACHAI
  * Email tc1206966083@gmail.com
  */
-public class kp {
+public class Test {
+
 
     public static void main(String[] args) {
-        double[] a = {1,2,2.22,3,1.23,3,5,9};
+
+            double [] a= {3,3,4,2,1,4.3243,6.434,3643,7.342,3.342};
         System.out.println(Arrays.toString(a));
         sort(a);
         System.out.println(Arrays.toString(a));
@@ -22,46 +24,38 @@ public class kp {
         }
     }
 
-
-    public static void sort(double[]a,int low,int height){
-
-        int i = low;
-        int j = height;
-
-        // 递归退出条件
+    public static void sort(double[] a,int low,int height){
+        int i=low;
+        int j=height;
+        // 退出条件
         if(i>j){
             return;
         }
-        // 记录key
-        double key = a[i];
-
+        double key =  a[i];
 
         while(i<j){
-            // 从右到左记录比key小的值
+            // 从右到左
             while (i<j&&a[j]>key){
                 j--;
             }
-            // 从左到右记录比key大的值
+            // 从左到右
             while (i<j&&a[i]<=key){
                 i++;
             }
-            // 交换值
+
             if(i<j){
                 double temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
+                a[i]=a[j];
+                a[j]=temp;
             }
-
         }
-        // 交换key的值
+
+        // 交换key
         double temp = a[i];
-        a[i] =a[low];
-        a[low]= temp;
-        //递归左边
+        a[i]=a[low];
+        a[low]=temp;
+
         sort(a,low,i-1);
-        //递归右边
         sort(a,i+1,height);
-
     }
-
 }

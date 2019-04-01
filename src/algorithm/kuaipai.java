@@ -70,7 +70,7 @@ public class kuaipai {
         a[i]=a[low];
         a[low]=k;
 
-        sort(a,0,i-1);
+        sort(a,low,i-1);
 
         sort(a,i+1,high);
     }

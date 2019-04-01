@@ -31,13 +31,23 @@ public class LinkedList<E> {
         }
     }
 
-    private Node head;
+//    private Node head;
     private int size;
 
+    private Node dummyHead;
+
+//    {
+//        dummyHead.e=null;
+//    }
+
+
     public LinkedList(){
-        head = null;
+        dummyHead = new Node(null,null);
         size = 0;
     }
+
+
+//    public LinkedList()
     //获得链表中的元素个数
     public int getSize(){
         return size;
@@ -48,9 +58,7 @@ public class LinkedList<E> {
     }
 
     public void addFirst(E e){
-        Node node = new Node(e);
-        node.next=head;
-        head=node;
+        dummyHead.next=new Node(e,dummyHead.next);
 //        head=new Node(e,head);
         size++;
     }
@@ -63,13 +71,11 @@ public class LinkedList<E> {
         if(index==0){
             addFirst(e);
         }
-        Node node = new Node(e);
-        Node prev = head;
-        for(int i=0;i<index-1;i++){
+        Node prev = dummyHead;
+        for(int i=0;i<index;i++){
             prev=prev.next;
         }
-        node.next=prev.next;
-        prev.next=node;
+        prev.next=new Node(e,prev.next);
 //        prev.next= new Node(e,prev.next);
         size++;
     }
@@ -80,4 +86,67 @@ public class LinkedList<E> {
     }
 
 
+    public E get(int index){
+        if(index<0||index>=size)
+            throw new IllegalArgumentException("Add failed.Illegal index.");
+//        Node cur = du
+        Node cur= dummyHead.next;
+        for(int i=0;i<index;i++){
+            cur=cur.next;
+        }
+        return cur.e;
+    }
+
+    public E getFirst(){
+        return get(0);
+    }
+
+    public E getLast(){
+        return get(size-1);
+    }
+
+
+    public void set (int index,E e){
+        Node cur = dummyHead.next;
+        for(int i=0;i<index;i++){
+            cur = cur.next;
+        }
+        cur.e=e;
+    }
+
+    //  true 包含 false 不包含
+    public boolean contain(E e){
+        Node cur = dummyHead.next;
+//        for (int i=0;i<size;i++){
+//            if(cur.e.equals(e)){
+//                return true;
+//            }
+//            cur=cur.next;
+//        }
+//
+        while (cur!=null){
+            if(cur.e.equals(e)){
+                return true;
+            }
+            cur=cur.next;
+        }
+        return false;
+    }
+
+
+    @Override
+    public String toString(){
+        StringBuilder res = new StringBuilder();
+//        Node cur = dummyHead.next;
+//        while (cur!=null){
+//            cur=cur.next;
+//        }
+
+        for(Node cur = dummyHead.next;cur!=null;cur=cur.next)
+            res.append(cur+"->");
+
+
+        res.append("NULL");
+        return res.toString();
+    }
 }

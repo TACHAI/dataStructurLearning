@@ -32,6 +32,7 @@ public class quickSort {
         int j=heigh;
 
 
+
         // 递归退出条件
         if(i>j){
             return;
