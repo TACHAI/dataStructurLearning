@@ -59,11 +59,11 @@ public class ArrayTest<T> {
     }
 
     //删 todo 缩小大小
-    public void del(int index){
+    public T del(int index){
         if(index<0||index>size){
             throw new IllegalArgumentException("add failed require index>=0 and index < size");
         }
-
+        T t = data[index];
         for(int i=index;i<size;i++){
             data[i]=data[i+1];
         }
@@ -73,7 +73,7 @@ public class ArrayTest<T> {
             resize(data.length/2);
         }
         data[size]=null;
-
+        return t;
     }
     //改
     public void set(int index,T t){
@@ -112,6 +112,14 @@ public class ArrayTest<T> {
         return data[index];
     }
 
+
+    public void addLast(T t){
+        add(size,t);
+    }
+
+    public T removeLast(){
+       return del(size);
+    }
 
     private void resize(int newCapacity){
         T[] temp = (T[]) new Object[newCapacity];
