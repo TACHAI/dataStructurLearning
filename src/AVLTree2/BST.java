@@ -54,6 +54,7 @@ public class BST<E extends Comparable<E>> {
         ee(root,node);
     }
 
+
     private void ee(Node root,Node node){
         if(node.e.compareTo(root.e)==0){
             return;
@@ -73,6 +74,88 @@ public class BST<E extends Comparable<E>> {
             }
         }
 
+
+    }
+
+
+    public boolean contains(E e){
+
+        return contains(root,e);
+    }
+
+    private boolean contains(Node node,E e){
+        if(node==null){
+            return false;
+        }
+        if(e.compareTo(node.e)==0){
+            return true;
+
+        }else if(e.compareTo(node.e)<0){
+            return contains(node.left,e);
+        }else {
+            return contains(node.right,e);
+        }
+    }
+
+
+    private Node removeMin(){
+        Node min= NodeMin(root);
+        //
+        root = removeMin(root);
+
+        return min;
+
+    }
+
+    private Node removeMax(){
+        Node max= NodeMax(root);
+
+        root= removeMax(root);
+        return max;
+    }
+
+    private Node removeMin(Node node){
+        if(node.left==null){
+            size--;
+            Node rightNode=node.right;
+            node.right=null;
+            return rightNode;
+        }
+        node.left=removeMin(node.left);
+        return node;
+    }
+
+    private Node removeMax(Node node){
+        if(node.right==null){
+            size--;
+            Node nodeLeft  = node.left;
+            node.left=null;
+            return nodeLeft;
+        }
+        node.right=removeMax(node.right);
+        return node;
+    }
+
+    private Node NodeMin(Node node){
+        if (node.right==null){
+            return node;
+        }
+        return NodeMin(node.right);
+    }
+
+
+    private Node NodeMax(Node node){
+        if(node.left==null){
+            return node;
+        }
+        return NodeMax(node);
+    }
+
+    public void delete(E e){
+        del(root,e);
+    }
+
+    private void del(Node root,E e){
 
     }
 }
