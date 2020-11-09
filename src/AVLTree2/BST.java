@@ -155,7 +155,64 @@ public class BST<E extends Comparable<E>> {
         del(root,e);
     }
 
-    private void del(Node root,E e){
+    private void del(Node node,E e){
+        if(node.e.compareTo(e)==0) {
+            Node mix = NodeMin(node.right);
+            removeMin(node.right);
+            node.e = mix.e;
 
+        }else if(node.e.compareTo(e)>0){
+            del(node.right,e);
+        }else if(node.e.compareTo(e)<0){
+            del(node.right,e);
+        }
+
+        if(node==null){
+            //throw new Exception();
+        }
+    }
+
+    public void remove(E e){
+        root = remove(root,e);
+    }
+
+    private Node remove(Node node,E e){
+        if(node==null){
+            return null;
+        }
+
+        if(e.compareTo(node.e)<0){
+            node.left=remove(node.left,e);
+            return node;
+        }else if(e.compareTo(node.e)>0){
+            node.right=remove(node.right,e);
+            return node;
+        }else {
+            // 待删除节点左子树为空的情况
+            if(node.left==null){
+                Node rightNode = node.right;
+                node.right=null;
+                size--;
+                return rightNode;
+            }
+
+            //待删除节点右子树为空的情况
+            if(node.right==null){
+                Node leftNode=node.left;
+                node.left=null;
+                size--;
+                return leftNode;
+            }
+
+            //待删除节点左右子树均不为空
+            Node min = NodeMin(node.right);
+
+            min.left=node.left;
+            min.right=removeMin(node.right);
+            size++;
+            node.left=node.right=null;
+            size--;
+            return min;
+        }
     }
 }
